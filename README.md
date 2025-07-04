@@ -12,7 +12,6 @@ A centralized web application that empowers users to **monitor**, **manage**, an
 - [🎯 Target Users](#-target-users)
 - [⚙️ Tech Stack](#️-tech-stack)
 - [🗂 Folder Structure](#-folder-structure)
-- [🚀 Getting Started](#-getting-started)
 - [📄 License](#-license)
 
 ---
@@ -83,4 +82,34 @@ This results in **security risks**, **delayed breach detection**, and **poor acc
 ---
 
 ## 🗂 Folder Structure (Backend)
+com.securitydashboard
+├── auth
+│   ├── controller
+│   ├── service
+│   ├── dto
+│   ├── entity
+│   └── jwt
+├── security
+│   ├── config
+│   ├── filter
+│   ├── utils
+│   └── 2fa
+├── dashboard
+│   ├── controller
+│   ├── service
+│   └── entity
+├── logs
+│   └── model / repository
+├── breachcheck
+│   └── integration
+└── utils
 
+📄 License
+Let me know if you want me to:
+
+- Generate a **live project description website (GitHub Pages)**  
+- Create a **frontend README** separately  
+- Add **badges**, **screenshots**, or **usage instructions** to this README  
+- Package this into a **starter GitHub repo template**
+
+Just say the word and I’ll prep it.

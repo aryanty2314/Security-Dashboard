@@ -1,5 +1,6 @@
 package com.security.dashboard.auth.jwt;
 
+import com.security.dashboard.auth.entity.User;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import jakarta.annotation.PostConstruct;
@@ -71,4 +72,12 @@ public class JwtService {
                 .getBody();
         return resolver.apply(claims);
     }
+    public String generateAccessToken(User user) {
+        return generateToken(user.getEmail(), Map.of("role", user.getRole()));
+    }
+
+    public String generateRefreshToken(User user) {
+        return generateRefreshToken(user.getEmail());
+    }
+
 }

@@ -10,18 +10,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
-
 
 @Document(collection = "users")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
-// This class represents a User entity in the application.
-public class User implements UserDetails
-{
+public class User implements UserDetails {
 
     @Id
     private int id;
@@ -31,16 +26,12 @@ public class User implements UserDetails
     private String password;
     private Roles role;
     private boolean twoFactorEnabled;
-    private boolean accountNonLocked;
+    private boolean accountNonLocked = true;
     private boolean enabled = true;
-
-
-    // This method returns the password of the user.
-
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(role.name()));
+        return List.of(new SimpleGrantedAuthority("ROLE_" + role.name()));
     }
 
     @Override
@@ -49,12 +40,27 @@ public class User implements UserDetails
     }
 
     @Override
+    public String getPassword() {
+        return password;
+    }
+
+    @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return accountNonLocked;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return enabled;
     }
 }

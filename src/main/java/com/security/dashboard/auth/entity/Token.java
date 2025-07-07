@@ -19,8 +19,8 @@ public class Token
 {
 
     @Id
-    private int id;
-    private int userId;
+    private String id;
+    private String userId;
     private String refreshToken; // store refresh token
     private boolean expired;
     private boolean revoked;

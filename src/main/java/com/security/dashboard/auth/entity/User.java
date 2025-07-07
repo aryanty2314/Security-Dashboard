@@ -19,15 +19,18 @@ import java.util.List;
 public class User implements UserDetails {
 
     @Id
-    private int id;
+    private String id;
 
     private String name;
     private String email;
     private String password;
+
     private Roles role;
+
     private boolean twoFactorEnabled;
     private boolean accountNonLocked = true;
     private boolean enabled = true;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

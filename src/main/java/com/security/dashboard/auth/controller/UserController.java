@@ -9,6 +9,7 @@ import com.security.dashboard.auth.repository.UserRepository;
 import com.security.dashboard.auth.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;

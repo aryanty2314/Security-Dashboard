@@ -5,7 +5,7 @@ import com.security.dashboard.auth.entity.User;
 
 import java.util.Optional;
 
-public interface UserRepository extends MongoRepository<User, Integer>
+public interface UserRepository extends MongoRepository<User, String>
 {
     Optional<User> findByEmail(String email);
     boolean existsByEmail(String email);
